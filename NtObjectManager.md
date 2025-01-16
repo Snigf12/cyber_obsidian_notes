@@ -1,0 +1,1 @@
+Is a [[PowerShell Module]] that has several tools to manage the creation, destruction and lifetime of [[NT Objects]]. It also helps tracking the objects that are in use, the resources allocated to processes, including device handles and file handles

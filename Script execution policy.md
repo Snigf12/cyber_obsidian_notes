@@ -1,0 +1,3 @@
+[Check Microsoft's description](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4)
+
+It sets up which scripts can be run. This prevents users to use malicious modules created by non-official sources. There are benign and unsigned modules that can be useful, that's why if you know what you're doing, you can change the policy to run unsigned scripts.
