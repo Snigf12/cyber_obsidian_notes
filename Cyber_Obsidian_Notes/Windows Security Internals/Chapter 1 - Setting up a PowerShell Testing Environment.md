@@ -1,10 +1,10 @@
 Go back to [[1_Index]]
 Go to [[Chapter 2 - The Windows Kernel]]
 
-# Basic concepts:
+## Basic concepts:
 In PowerShell, the terms **functions**, **methods**, **cmdlets**, and **modules** refer to different components used to create, organize, and execute scripts and commands. Here's a brief explanation of each:
 
-#### **Functions**
+### **Functions**
 A **function** is a block of reusable code defined by the user to perform a specific task.
 
 - **Syntax:** `function FunctionName { <script block> }`
@@ -17,7 +17,7 @@ A **function** is a block of reusable code defined by the user to perform a spec
     Greet -Name "Alex"
     ```
 
-#### **Methods**
+### **Methods**
 A **method** is a function that belongs to a .NET object and is used to perform operations on that object.
 
 - Accessed using the `.` notation.
@@ -26,7 +26,7 @@ A **method** is a function that belongs to a .NET object and is used to perform 
     $date = Get-Date
     $date.AddDays(5)  # Adds 5 days to the current date
     ```
-#### **Cmdlets**
+### **Cmdlets**
 
 A **cmdlet** is a built-in PowerShell command designed to perform specific tasks.
 
@@ -37,7 +37,7 @@ A **cmdlet** is a built-in PowerShell command designed to perform specific tasks
     Set-Content -Path "file.txt" -Value "Hello, World!"  # Writes to a file
     ```
 
-#### **Modules**
+### **Modules**
 
 A **module** is a collection of related cmdlets, functions, variables, and resources organized into a single package.
 
@@ -48,7 +48,7 @@ A **module** is a collection of related cmdlets, functions, variables, and resou
     ```
 
 These components allow PowerShell to be flexible and extensible for automation tasks and scripting.
-# Install [[NtObjectManager]] module
+## Install [[NtObjectManager]] module
 
 The [[Script execution policy]] in PowerShell 5.1 is by default set as restricted. To change this policy to accept unsigned scripts, and being able to use the [[PowerShell Module]] [NtObjectManager](https://www.powershellgallery.com/packages/NtObjectManager/2.0.1), which has a lot of tools (cmdlets) to monitor and interact with Windows [[NT Objects]].
 
@@ -78,7 +78,7 @@ Import-Module NtObjectManager
 > 
 > ```Install-PackageProvider -Name NuGet -Force```
 
-# How PowerShell variables work (Types and Examples)
+## How PowerShell variables work (Types and Examples)
 
 | Type      | .NET type               | Examples           |
 | --------- | ----------------------- | ------------------ |
@@ -90,7 +90,7 @@ Import-Module NtObjectManager
 | array     | System.Object[]         | @(1, "ABC", $true) |
 | hashtable | System.Object.Hashtable | @{A=1; B="ABC"}    |
 
-# Construct almost any .NET type variables
+## Construct almost any .NET type variables
 
 We can create [[Globally Unique Identifier GUID]] variables or almost any type of .NET variables, by specifying the variable type inside square brackets:
 
@@ -108,7 +108,7 @@ Or to create a random [[Globally Unique Identifier GUID]]:
 [System.Guid]::NewGuid
 ```
 
-# Discovering commands and getting help
+## Discovering commands and getting help
 
 To find commands that matches certain words, you can use the Get-Command cmdlet, and replace the keyword with what you're looking for:
 ```powershell
@@ -123,7 +123,7 @@ Result:
 ```text
 CommandType     Name                                   Version    Source
 -----------     ----                                   -------    ------
-Function        Add-NtSecurityDescriptorControl       2.0.1     NtObjectManager
+Function        Add-NtSecurityDescriptorControl       2.0.1      NtObjectManager
 Function        Add-RpcClientSecurityContext          2.0.1      NtObjectManager
 Function        Clear-NtSecurityDescriptorDacl        2.0.1      NtObjectManager
 .
@@ -166,7 +166,7 @@ We can see a nice window with the information if we use the -ShowWindow paramete
 Get-Help Set-NtFileEa -ShowWindow
 ```
 
-# PowerShell Functions
+## PowerShell Functions
 
 To define a function, example:
 ```powershell
@@ -201,7 +201,7 @@ And to invoke that script, we need to use & to run that script as shown:
 
 That will execute the script saved in $script
 
-# Displaying / Manipulating objects
+## Displaying / Manipulating objects
 
 Objects allow you to work with data in a more meaningful way than plain text.
 ### Key Features of Objects in PowerShell:
